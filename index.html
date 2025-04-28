@@ -31,7 +31,7 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
-  
+
 </head>
 
 <body>
@@ -41,19 +41,51 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column has-text-centered">
-        <h1 class="title is-1 publication-title">MVP: Mapping View-bias with Prompts for Aerial-Ground Person Re-identification</h1>
+        <h1 class="title is-1 publication-title" style="text-align: center;">
+          <span style="font-weight: bold;">
+            <span style="color: red;">M</span><span style="color: green;">V</span><span style="color: orange;">P</span>
+          </span>:
+          <span style="font-weight: normal;">
+            <span style="color: red;">M</span>apping 
+            <span style="color: green;">V</span>iew-bias with 
+            <span style="color: orange;">P</span>rompts for Aerial-Ground Person Re-identification
+          </span>
+        </h1>
+        
+        
+        
+        
 
         <!-- 作者信息 -->
-        <div class="is-size-5 publication-authors">
-          <span class="author-block"><a href="https://scholar.google.com/citations?user=u_OewE4AAAAJ" target="_blank">Minxin Yu</a><sup>*</sup>,</span>
-          <span class="author-block"><a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Xiang Zhou</a><sup>*</sup>,</span>
-          <span class="author-block"><a href="https://scholar.google.com/citations?user=qKxpHGcAAAAJ" target="_blank">Yiyuan Ge</a><sup>*</sup></span>
+        <!-- 作者信息 -->
+        <div style="text-align: center; font-size: 1.1rem; line-height: 1.6;">
+          
+          <p>
+            <a href="https://scholar.google.com/citations?user=u_OewE4AAAAJ" target="_blank" style="color: #007bff;">Minxin Yu</a><sup>*</sup>,
+            <a href="https://scholar.google.com/citations?user=YOUR_SECOND_AUTHOR_ID" target="_blank" style="color: #007bff;">Xiang Zhou</a><sup>*</sup>,
+            <a href="https://scholar.google.com/citations?user=qKxpHGcAAAAJ" target="_blank" style="color: #007bff;">Yiyuan Ge</a><sup>*†</sup>,
+            Mingwei Lin,
+            Xin Luo
+          </p>
+          
+
+          <p style="margin-top: 10px; text-align: center;">
+            <sup>1,2</sup> Beijing Information Science and Technology University,
+            <sup>3</sup> South China University of Technology,
+          </p>
+          <p style="text-align: center;">
+            <sup>4</sup> Fujian Normal University,
+            <sup>5</sup> Southwest University
+          </p>
+          
+
+          <p style="margin-top: 10px; font-size: 1rem;">
+            <sup>*</sup>Build equal,
+            <sup>†</sup>Corresponding authors
+          </p>
+
         </div>
 
-        <!-- 单位信息 -->
-        <div class="is-size-5 publication-authors" style="margin-top: 10px;">
-          <span class="author-block">Key Laboratory of the Ministry of Education for Optoelectronic Measurement Technology and Instrument, Beijing Information</span>
-        </div>
 
         <!-- 链接按钮 -->
         <div class="publication-links" style="margin-top: 20px;">
@@ -109,6 +141,212 @@
   </div>
 </section>
 
+ 
+
+
+
+<!-- Method部分 -->
+<section class="section" style="padding-top: 60px; padding-bottom: 60px;">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-2">Method</h2>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-10 has-text-centered">
+        <img src="static/images/MVP.jpg" alt="Method Overview" style="max-width: 100%; height: auto;">
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-eight-tenths">
+        <p class="has-text-justified" style="margin-top: 20px;">
+          The figure shows our proposed MVP framework, which consists of two stages: bias transfer and unbiased guidance. In the first stage, inter-modal
+ feature alignment is achieved by AGSC loss and alignment loss to map the viewpoint offsets between modes; in the second stage, unbiased bootstrapping is
+ used to ensure feature consistency and solve the viewpoint bias problem
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 60px; padding-bottom: 60px;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2 has-text-centered">Comparison on CARGO Dataset</h2>
+
+    <p style="margin-bottom: 20px;">
+      Comparison of different methods on the CARGO dataset. The best results are in <b>bold</b> and the second-best results are <u>underlined</u>. An asterisk (*) denotes the baseline method.
+    </p>
+
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="text-align: center;">
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align: middle;">Method</th>
+            <th colspan="2">ALL</th>
+            <th colspan="2">AA</th>
+            <th colspan="2">GG</th>
+            <th colspan="2">AG</th>
+          </tr>
+          <tr>
+            <th>Rank-1</th>
+            <th>mAP</th>
+            <th>Rank-1</th>
+            <th>mAP</th>
+            <th>Rank-1</th>
+            <th>mAP</th>
+            <th>Rank-1</th>
+            <th>mAP</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr><td>SBS</td><td>50.3</td><td>43.1</td><td>67.5</td><td>49.7</td><td>72.3</td><td>63.0</td><td>31.3</td><td>18.7</td></tr>
+          <tr><td>PCB</td><td>51.0</td><td>44.5</td><td>55.0</td><td>44.6</td><td>74.1</td><td>67.6</td><td>34.4</td><td>20.1</td></tr>
+          <tr><td>BoT</td><td>54.8</td><td>46.5</td><td>65.0</td><td>49.8</td><td>77.7</td><td>66.5</td><td>36.3</td><td>21.5</td></tr>
+          <tr><td>MGN</td><td>54.8</td><td>49.1</td><td>65.0</td><td>53.0</td><td>83.9</td><td>71.1</td><td>31.9</td><td>24.6</td></tr>
+          <tr><td>VV</td><td>45.8</td><td>38.8</td><td>67.5</td><td>49.7</td><td>72.3</td><td>63.0</td><td>31.3</td><td>18.7</td></tr>
+          <tr><td>AGW</td><td>60.3</td><td>53.4</td><td>67.5</td><td>56.5</td><td>81.3</td><td>71.7</td><td>43.6</td><td>29.4</td></tr>
+          <tr><td>ViT</td><td>61.5</td><td>53.5</td><td><u>80.0</u></td><td>64.5</td><td>82.1</td><td>71.3</td><td>43.1</td><td>28.2</td></tr>
+          <tr><td>VDT</td><td>64.1</td><td>55.2</td><td><b>82.5</b></td><td><u>66.8</u></td><td>82.1</td><td>71.6</td><td>48.1</td><td>30.0</td></tr>
+          <tr><td>CLIP-ReID*</td><td><u>64.7</u></td><td><u>59.3</u></td><td>70.0</td><td>64.3</td><td><u>83.0</u></td><td><u>74.9</u></td><td><u>61.3</u></td><td><u>60.6</u></td></tr>
+
+          <!-- 你的MVP结果，主数字黑色粗体，提升数字绿色小字 -->
+          <tr>
+            <td><b>MVP (Ours)</b></td>
+            <td><b>70.2</b> <span style="color: green; font-size: 0.9em;">(+5.5)</span></td>
+            <td><b>65.7</b> <span style="color: green; font-size: 0.9em;">(+6.4)</span></td>
+            <td><u>80.0</u></td>
+            <td><b>69.2</b> <span style="color: green; font-size: 0.9em;">(+2.4)</span></td>
+            <td><b>85.7</b> <span style="color: green; font-size: 0.9em;">(+2.7)</span></td>
+            <td><b>80.8</b> <span style="color: green; font-size: 0.9em;">(+5.9)</span></td>
+            <td><b>64.0</b> <span style="color: green; font-size: 0.9em;">(+2.7)</span></td>
+            <td><b>64.0</b> <span style="color: green; font-size: 0.9em;">(+3.4)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 60px; padding-bottom: 60px;">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2 has-text-centered">Comparison on AG-ReID Dataset</h2>
+
+    <p style="margin-bottom: 20px; text-align: center;">
+      Comparison of different methods on the AG-ReID dataset under AG and GA protocols. The best results are in <b>bold</b>.
+    </p>
+
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="text-align: center;">
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align: middle;">Method</th>
+            <th colspan="2">AG</th>
+            <th colspan="2">GA</th>
+          </tr>
+          <tr>
+            <th>Rank-1</th>
+            <th>mAP</th>
+            <th>Rank-1</th>
+            <th>mAP</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr><td>SBS</td><td>73.5</td><td>59.8</td><td>73.7</td><td>62.3</td></tr>
+          <tr><td>BoT</td><td>70.0</td><td>55.5</td><td>71.2</td><td>58.8</td></tr>
+          <tr><td>OSNet</td><td>72.6</td><td>58.3</td><td>74.2</td><td>61.0</td></tr>
+          <tr><td>VV</td><td>77.2</td><td>67.2</td><td>79.7</td><td>69.8</td></tr>
+          <tr><td>ViT</td><td>81.3</td><td>72.4</td><td>82.6</td><td>73.4</td></tr>
+          <tr><td>Explain</td><td>81.5</td><td>72.6</td><td>82.9</td><td>73.4</td></tr>
+          <tr><td>VDT</td><td>82.9</td><td>74.4</td><td><u>86.6</u></td><td><u>78.6</u></td></tr>
+          <tr><td>Clip-ReID*</td><td><u>83.3</u></td><td><u>74.8</u></td><td>85.9</td><td>78.1</td></tr>
+
+          <!-- MVP的结果，主数字加粗，提升绿色小字 -->
+          <tr>
+            <td><b>MVP (Ours)</b></td>
+            <td><b>85.1</b> <span style="color: green; font-size: 0.9em;">(+1.8)</span></td>
+            <td><b>77.9</b> <span style="color: green; font-size: 0.9em;">(+3.1)</span></td>
+            <td><b>89.2</b> <span style="color: green; font-size: 0.9em;">(+2.6)</span></td>
+            <td><b>80.4</b> <span style="color: green; font-size: 0.9em;">(+1.8)</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section" style="padding-top: 60px; padding-bottom: 60px;">
+  <div class="container is-max-desktop">
+
+    <!-- 用 h2 标题，不单独用 p -->
+    <h2 class="title is-2 has-text-centered">
+      Cross-domain Performance Evaluations<br>
+      (CARGO → AG-ReID)
+    </h2>
+    
+    <!-- 可以加一句简单的小描述（可选） -->
+    <p style="margin-bottom: 20px; text-align: center;">
+      Cross-domain evaluations transferring from CARGO dataset to AG-ReID dataset.
+    </p>
+
+    <div class="table-container">
+      <table class="table is-bordered is-striped is-hoverable is-fullwidth" style="text-align: center;">
+        <thead>
+          <tr>
+            <th rowspan="2" style="vertical-align: middle;">Method</th>
+            <th colspan="2">AG</th>
+            <th colspan="2">GA</th>
+          </tr>
+          <tr>
+            <th>Rank-1</th>
+            <th>mAP</th>
+            <th>Rank-1</th>
+            <th>mAP</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>ViT</td>
+            <td>1.6</td>
+            <td>2.0</td>
+            <td>3.0</td>
+            <td>2.3</td>
+          </tr>
+          <tr>
+            <td>VDT</td>
+            <td>19.3</td>
+            <td>11.8</td>
+            <td>15.4</td>
+            <td>11.7</td>
+          </tr>
+          <tr>
+            <td><b>MVP (Ours)</b></td>
+            <td><b>30.0</b></td>
+            <td><b>17.6</b></td>
+            <td><b>18.4</b></td>
+            <td><b>16.0</b></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
 <!-- 图片轮播区 -->
 <section class="section" style="padding-top: 60px; padding-bottom: 60px;">
   <div class="container">
@@ -139,32 +377,7 @@
   </div>
 </section>
 
-<!-- Method部分 -->
-<section class="section" style="padding-top: 60px; padding-bottom: 60px;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-full">
-        <h2 class="title is-2">Method</h2>
-      </div>
-    </div>
 
-    <div class="columns is-centered">
-      <div class="column is-10 has-text-centered">
-        <img src="static/images/MVP.jpg" alt="Method Overview" style="max-width: 100%; height: auto;">
-      </div>
-    </div>
-
-    <div class="columns is-centered">
-      <div class="column is-eight-tenths">
-        <p class="has-text-justified" style="margin-top: 20px;">
-          The figure shows our proposed MVP framework, which consists of two stages: bias transfer and unbiased guidance. In the first stage, inter-modal
- feature alignment is achieved by AGSC loss and alignment loss to map the viewpoint offsets between modes; in the second stage, unbiased bootstrapping is
- used to ensure feature consistency and solve the viewpoint bias problem
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- BibTeX引用格式 -->
 <section class="section" style="padding-top: 60px; padding-bottom: 60px;">
